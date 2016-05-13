@@ -6,7 +6,7 @@ App is developed by MaddyMastering using ionic.
 
 Steps to run this app on your android phone.
 
-1. git clone
+1. git clone https://github.com/MaddyMastering/budgetizer_ionic.git 
 
 2. npm install
 
