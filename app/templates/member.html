@@ -1,0 +1,41 @@
+<ion-view view-title="Details">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="images/profile.png">
+        <h2>{{member.name}}</h2>
+        <p>Spent: {{member.total}}</p>
+      </div>
+    </div>
+    <div class="row" align="center">
+      <a class="button button-block button-balanced" href="#/app/add_item/{{member.id}}" style="width: 100%">Add
+        Item</a>
+    </div>
+
+    <br/>
+    <div class="row" align="center" ng-show="member.spent.length > 0">
+      <div class="col">
+        <p><b>Purpose</b></p>
+      </div>
+      <div class="col">
+        <p><b>Amount</b></p>
+      </div>
+      <div class="col">
+        <p><b>Action</b></p>
+      </div>
+    </div>
+    <ion-item ng-repeat="item in member.spent track by $index">
+      <div class="row" align="center" ng-click="openModal(item)">
+        <div class="col">
+          {{item.purpose}}
+        </div>
+        <div class="col">
+          {{item.amount}}
+        </div>
+        <div class="col">
+          <a href="" ng-click="_delete(item)"><i class="icon ion-trash-a"></i></a>
+        </div>
+      </div>
+    </ion-item>
+  </ion-content>
+</ion-view>

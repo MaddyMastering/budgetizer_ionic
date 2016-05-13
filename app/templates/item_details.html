@@ -1,0 +1,13 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Budgetizer</h1>
+  </ion-header-bar>
+  <ion-content style="margin: 50px">
+    <p><b>Item :</b> {{modalData.purpose}}</p>
+    <p><b>Amount :</b> {{modalData.amount}}</p>
+    <p><b>Date :</b> {{modalData.date | date : 'mediumDate'}}</p>
+    <!--Todo: add location where we took item.  -->
+    <p><b>Location :</b> Hongasandra, Bengaluru-68. (this is dummy data still)</p>
+    <button class="button button-block button-balanced" ng-click="closeModal()" type="submit">Close</button>
+  </ion-content>
+</ion-modal-view>

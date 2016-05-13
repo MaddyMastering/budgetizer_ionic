@@ -1,0 +1,24 @@
+<ion-view view-title="Add Member">
+  <ion-content>
+    <form ng-submit="_addMember()">
+      <div class="list card">
+        <div class="item item-image" style="background-color: #e0e0e0">
+          <img src="images/profile.png" style="width: 50%"/>
+        </div>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="Nick Name" ng-model="member.name" ng-required="true" style="border-bottom: 1px solid #65C6BB;"/>
+          </label>
+          <!--<label class="item item-input">-->
+          <!--<input type="file" placeholder="Digital Pic" />-->
+          <!--</label>-->
+        </div>
+        <div align="right">
+          <button class="button button-balanced" type="submit">
+            Add Member
+          </button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

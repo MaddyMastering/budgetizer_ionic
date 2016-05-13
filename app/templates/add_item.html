@@ -1,0 +1,30 @@
+<ion-view view-title="Add Item">
+  <ion-content>
+    <div>
+      <div class="list card">
+        <div class="item item-avatar">
+          <img src="images/profile.png" />
+          <h2>{{member.name}}</h2>
+          <p>Spent : {{member.total}}</p>
+        </div>
+        <form ng-submit="_addItem()">
+          <div class="item item-body">
+            <div class="list list-inset">
+              <label class="item item-input">
+                <input type="text" placeholder="Purpose" ng-model="item.purpose" ng-required="true"/>
+              </label>
+              <label class="item item-input">
+                <input type="number" placeholder="Amount" ng-model="item.amount" ng-required="true"/>
+              </label>
+            </div>
+            <div align="right">
+              <button class="button button-balanced" type="submit">
+                Add
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

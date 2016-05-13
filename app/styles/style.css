@@ -1,0 +1,29 @@
+/*#65C6BB*/
+
+.icon{
+  font-size: 20px;
+  color: #674172;
+}
+
+.bar.bar-stable {
+  background-color: #65C6BB;
+  color: #FFFFFF;
+  border-bottom: 2px solid #1BA39C;
+}
+
+.bar.bar-stable .title {
+  color: #FFFFFF;
+}
+
+.button.button-balanced {
+  background-color: #65C6BB;
+  border-color: #1BA39C;
+}
+
+.button.button-positive {
+  background-color: #65C6BB;
+  border-color: #1BA39C;
+}
+/*.item-input input, .item-input textarea{*/
+  /*border-bottom: 1px solid #65C6BB;*/
+/*}*/

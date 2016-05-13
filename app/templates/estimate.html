@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Budgetizer</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()"><i class="icon ion-close-circled"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content align="center">
+    <!--<button class="button button-block button-balanced" type="submit">Estimate</button>-->
+    <br />
+    <h5>Trip Budget per Person: {{budget}}</h5>
+    <br />
+    <div class="row" align="center" style="border-top: 1px solid #e0e8e0">
+      <div class="col">
+        <p><b>Budget List</b></p>
+      </div>
+    </div>
+    <ion-item ng-repeat="item in budgetList track by $index">
+      {{item}}
+    </ion-item>
+  </ion-content>
+</ion-modal-view>
