@@ -2,6 +2,8 @@
 
 Budgetizer : Simple Trip Organizer Android App.
 
+![](screenshot/mob_view.png) 
+
 App is developed by MaddyMastering using ionic.
 
 Steps to run this app on your android phone.
