@@ -1,12 +1,10 @@
 var app = angular.module('starter.controllers', []);
 
-app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, AppService) {
+app.controller('AppCtrl', function ($scope, $ionicModal, AppService) {
 
   function final_sketch(giver, extra){
     while (extra.length > 0 && giver.length > 0) {
       var temp = extra[0].extra - giver[0].toGive;
-      console.log('extra ', extra[0]);
-      console.log('giver ', giver[0]);
 
       if (temp > 0) {
         $scope.budgetList.push(giver[0].name + ' should give ' + giver[0].toGive + 'rs to ' + extra[0].name);
@@ -14,9 +12,9 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, AppService) {
         giver[0].toGive = 0;
         giver.shift();
       } else if(temp < 0){
-        $scope.budgetList.push(giver[0].name + ' should give ' + giver[0].toGive + 'rs to ' + extra[0].name);
+        $scope.budgetList.push(giver[0].name + ' should give ' + extra[0].extra + 'rs to ' + extra[0].name);
         var x = parseInt(temp.toString().replace(/\-/g, ''));
-        giver[0].toGive = temp;
+        giver[0].toGive = x;
         extra.shift();
       }else if(temp == 0){
         $scope.budgetList.push(giver[0].name + ' should give ' + giver[0].toGive + 'rs to ' + extra[0].name);
@@ -43,7 +41,6 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, AppService) {
       var temp = team[i].total - $scope.budget;
       if (temp < 0) {
         team[i].toGive = parseInt(temp.toString().replace(/\-/g, ''));
-        team[i].donor = true;
         giver.push(team[i]);
       } else if(temp > 0){
         team[i].extra = temp;
@@ -111,7 +108,7 @@ app.controller('AddMemberCtrl', function ($scope, $ionicPopup, AppService) {
     AppService.addMember(data).then(function (data) {
       console.log('added member ', data);
       if (data.status == 200) {
-        $scope.member = {name: '', spent: [], total: 0, donor: false, extra: 0, toGive: 0};
+        $scope.member = {name: '', spent: [], total: 0, extra: 0, toGive: 0};
         $ionicPopup.alert({title: 'Add Member', template: data.message});
       }
     }, function (error) {
