@@ -7,17 +7,17 @@ app.controller('AppCtrl', function ($scope, $ionicModal, AppService) {
       var temp = extra[0].extra - giver[0].toGive;
 
       if (temp > 0) {
-        $scope.budgetList.push(giver[0].name + ' should give ' + giver[0].toGive + 'rs to ' + extra[0].name);
+        $scope.budgetList.push(giver[0].name + ' should give ' + Math.round((giver[0].toGive * 100) / 100) + 'rs to ' + extra[0].name);
         extra[0].extra = extra[0].extra - giver[0].toGive;
         giver[0].toGive = 0;
         giver.shift();
       } else if(temp < 0){
-        $scope.budgetList.push(giver[0].name + ' should give ' + extra[0].extra + 'rs to ' + extra[0].name);
+        $scope.budgetList.push(giver[0].name + ' should give ' + Math.round((extra[0].extra * 100) / 100) + 'rs to ' + extra[0].name);
         var x = parseInt(temp.toString().replace(/\-/g, ''));
         giver[0].toGive = x;
         extra.shift();
       }else if(temp == 0){
-        $scope.budgetList.push(giver[0].name + ' should give ' + giver[0].toGive + 'rs to ' + extra[0].name);
+        $scope.budgetList.push(giver[0].name + ' should give ' + Math.round((giver[0].toGive * 100) / 100) + 'rs to ' + extra[0].name);
         giver[0].toGive = 0;
         extra.shift();
         giver.shift();
